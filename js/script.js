@@ -63,27 +63,62 @@ document.querySelectorAll('.nav a').forEach(anchor => {
     });
 });
 
-// 5. FORMULÁRIO DE CONTATO
+// 5. FORMULÁRIO DE CONTATO - VERSÃO FINAL E CORRIGIDA
 const form = document.getElementById('form-contato');
+
 if (form) {
     const btnEnviar = document.getElementById('btn-enviar');
     const campoEmail = document.getElementById('campo-email');
-    const camposObrigatorios = [document.getElementById('campo-nome'), document.getElementById('campo-msg')];
+    const campoNome = document.getElementById('campo-nome');
+    const campoMsg = document.getElementById('campo-msg');
 
+    // ESTA É A FUNÇÃO QUE FAZ O BOTÃO ACENDER
     form.addEventListener('input', () => {
+        // Validação básica: email precisa de @ e . / Nome e Msg não podem estar vazios
         const emailValido = campoEmail.value.includes('@') && campoEmail.value.includes('.');
-        const textosPreenchidos = camposObrigatorios.every(c => c.value.trim() !== "");
-        btnEnviar.disabled = !(emailValido && textosPreenchidos);
-        btnEnviar.classList.toggle('disabled', btnEnviar.disabled);
+        const nomePreenchido = campoNome.value.trim().length > 0;
+        const msgPreenchida = campoMsg.value.trim().length > 0;
+        
+        const tudoCerto = emailValido && nomePreenchido && msgPreenchida;
+
+        // Se tudo estiver certo, remove o 'disabled'
+        btnEnviar.disabled = !tudoCerto;
+        btnEnviar.classList.toggle('disabled', !tudoCerto);
     });
 
     form.onsubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
-        if (response.ok) form.innerHTML = `<p style="color:#8a2be2; font-weight:bold; text-align:center;">Mensagem enviada com sucesso!</p>`;
+        
+        btnEnviar.innerText = "Enviando...";
+        btnEnviar.disabled = true;
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                // SUCESSO: O e-mail foi para a lista de submissões
+                form.innerHTML = `<div style="text-align:center; padding: 20px;">
+                                    <p style="color:#8a2be2; font-weight:bold; font-size:1.5rem;"> Mensagem enviada com sucesso!</p>
+                                    <p>Em breve entrarei em contato.</p>
+                                  </div>`;
+            } else {
+                const erroData = await response.json();
+                throw new Error(erroData.error || "Erro ao processar envio");
+            }
+        } catch (error) {
+            console.error("Erro no envio:", error);
+            alert("Ops! Algo deu errado: " + error.message);
+            btnEnviar.innerText = "Enviar Mensagem";
+            btnEnviar.disabled = false;
+        }
     };
 }
-
+    
+    
 // 6. GALERIA
 let fotosAtuais = [];
 let fotoIndex = 0;
@@ -104,22 +139,18 @@ function mudarFoto(dir) {
 }
 function fecharGaleria() { document.getElementById('overlay-galeria').style.display = "none"; }
 
-// INICIALIZAÇÃO
-const btnBackToTop = document.getElementById('back-to-top');
+// INICIALIZAÇÃO DA SETA
+const setaTopo = document.getElementById('scrollTop');
 
 window.addEventListener('scroll', () => {
-    // Mostra o botão quando passar de 400px de altura
-    if (window.scrollY > 400) {
-        btnBackToTop.classList.add('show');
+    // Mostra a seta após rolar 400px
+    if (window.pageYOffset > 400) {
+        setaTopo.classList.add('show');
     } else {
-        btnBackToTop.classList.remove('show');
+        setaTopo.classList.remove('show');
     }
 });
 
-// Clique para voltar ao topo
-btnBackToTop.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+setaTopo.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });

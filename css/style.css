@@ -500,7 +500,7 @@ textarea {
 }
 
 /* BOTÃO VOLTAR AO TOPO */
-#back-to-top {
+#scrollTop {
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -522,13 +522,13 @@ textarea {
     box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
 }
 
-#back-to-top:hover {
+#scrollTop:hover {
     background-color: #9d4edd;
     transform: rotate(-50deg) scale(1.1); /* Efeito de zoom no hover */
 }
 
 /* Classe que o JavaScript vai adicionar ao rolar */
-#back-to-top.show {
+#scrollTop.show {
     opacity: 1;
     visibility: visible;
 }
