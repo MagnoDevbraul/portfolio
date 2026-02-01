@@ -1,11 +1,16 @@
-#  Magno Ferreira | Java Developer
+#  Magno Ferreira | Portfólio Java & Cello
 
-Portfólio profissional desenvolvido para apresentar meus projetos em **Java 25** e minha trajetória como **Violoncelista**.
+Bem-vindo ao meu portfólio pessoal! Este projeto foi desenvolvido para apresentar minha trajetória como desenvolvedor Java e minha paixão pela música clássica.
 
-##  Tecnologias
-- **Backend:** Java 25, Spring Boot 3.4, Spring Security.
-- **Frontend:** HTML5, CSS3 (Design Responsivo), JavaScript.
-- **Banco de Dados:** PostgreSQL.
+##  Tecnologias Utilizadas
+- **Frontend:** HTML5, CSS3 (com variáveis e animações) e JavaScript puro (ES6+).
+- **Integração:** Formspree API para gerenciamento de contatos.
+- **Deploy:** GitHub Pages.
 
-##  Acesse o Portfólio
- [Clique aqui para visualizar o site](https://magnodevbraul.github.io/portfolio/)
+##  Destaques Técnicos
+- **Formulário Inteligente:** Validação em tempo real via JavaScript para habilitar o botão de envio apenas após o preenchimento correto.
+- **Design Responsivo:** Interface adaptável para dispositivos móveis e desktops.
+- **Narrativa de Carreira:** Foco na transição de carreira, destacando a resiliência entre o Violoncelo e o Desenvolvimento Backend.
+
+---
+Mantenha contato: [https://github.com/MagnoDevbraul]
