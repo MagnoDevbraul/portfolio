@@ -13,4 +13,5 @@ Bem-vindo ao meu portfólio pessoal! Este projeto foi desenvolvido para apresent
 - **Narrativa de Carreira:** Foco na transição de carreira, destacando a resiliência entre o Violoncelo e o Desenvolvimento Backend.
 
 ---
-Mantenha contato: [https://github.com/MagnoDevbraul]
+Mantenha contato: https://github.com/MagnoDevbraul
+
