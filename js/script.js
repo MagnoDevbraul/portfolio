@@ -37,11 +37,33 @@ function updateProgressBar() {
     if (bar) bar.style.width = scrolled + "%";
 }
 
+/**
+ * ANIMAÇÃO DE ENTRADA DAS SEÇÕES
+ *
+ * Verifica a posição de cada seção em relação
+ * à área visível do navegador.
+ *
+ * Quando o início da seção alcança 85% da
+ * altura da janela, adiciona a classe "active",
+ * permitindo que o CSS execute a animação.
+ *
+ * A classe permanece ativa após a primeira
+ * exibição para evitar animações repetidas.
+ */
 function revealOnScroll() {
+
+    // Seleciona todas as seções que possuem animação.
     const sections = document.querySelectorAll('.scroll-reveal');
+
     sections.forEach(section => {
+
+        // Obtém a posição atual da seção na janela.
         const sectionTop = section.getBoundingClientRect().top;
-        const trigger = window.innerHeight * 3;
+
+        // Define o ponto de ativação em 85% da altura da tela.
+        const trigger = window.innerHeight * 0.85;
+
+        // Ativa a animação quando a seção alcança esse ponto.
         if (sectionTop < trigger) {
             section.classList.add('active');
         }

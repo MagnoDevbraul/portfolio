@@ -416,36 +416,28 @@ textarea {
     box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
     cursor: pointer;
 }
-/* Estado inicial das seções para o efeito de surgir */
+
+/* ==================================================
+   ANIMAÇÃO DE ENTRADA DAS SEÇÕES
+
+   As seções começam transparentes e deslocadas
+   40 pixels para baixo.
+
+   Quando o JavaScript adiciona a classe "active",
+   elas aparecem suavemente na posição original.
+================================================== */
+
+/* Estado inicial da seção */
 .scroll-reveal {
     opacity: 0;
     transform: translateY(40px);
-    transition: all 1s ease-out;
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-/* Quando ativado pelo scroll */
+/* Estado visível após a ativação pelo JavaScript */
 .scroll-reveal.active {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Container da barra (fixo no fundo do header) */
-.progress-container {
-    width: 100%;
-    height: 4px;
-    background: transparent;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-/* A barra de progresso propriamente dita */
-.progress-bar {
-    height: 4px;
-    background: #8a2be2; /* Seu roxo padrão */
-    width: 0%; /* Começa em 0 */
-    box-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
-    transition: width 0.1s ease; /* Suaviza a mudança */
 }
 
 /* EFEITO MÁQUINA DE ESCREVER */
@@ -464,7 +456,18 @@ textarea {
     100% { border-right: none } 
 }
 
-/* BARRA DE PROGRESSO DINÂMICA */
+/* ==================================================
+   BARRA DE PROGRESSO DA PÁGINA
+
+   A barra fica posicionada na parte inferior
+   do cabeçalho e indica quanto da página
+   o visitante já percorreu.
+
+   O JavaScript atualiza dinamicamente a largura
+   do elemento .progress-bar durante a rolagem.
+================================================== */
+
+/* Contêiner que ocupa toda a largura do cabeçalho */
 .progress-container {
     width: 100%;
     height: 4px;
@@ -474,24 +477,13 @@ textarea {
     left: 0;
 }
 
+/* Indicador visual do progresso de rolagem */
 .progress-bar {
     height: 100%;
     background: #8a2be2;
     width: 0%;
     box-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
     transition: width 0.2s ease-out;
-}
-
-/* REVEAL DAS SEÇÕES */
-.scroll-reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 2.5s cubic-bezier(2.5, 3, 2.5, 3);
-}
-
-.scroll-reveal.active {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* BOTÃO VOLTAR AO TOPO */
