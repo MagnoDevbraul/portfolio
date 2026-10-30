@@ -1,6 +1,4 @@
-// 1. BLOQUEIO DE CÓPIA
-document.addEventListener('contextmenu', e => e.preventDefault());
-document.onkeydown = e => { if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 85)) return false; };
+
 
 // 2. SLIDER DOS PROJETOS
 function configurarSlider(idTrack) {

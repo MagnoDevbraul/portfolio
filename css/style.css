@@ -9,11 +9,6 @@ body {
     color: #e0e0e0; 
 }
 
-.no-select { 
-    -webkit-user-select: none; 
-    user-select: none; 
-}
-
 /* CABEÇALHO */
 .top-header { 
     background: #0a0a0a; 
