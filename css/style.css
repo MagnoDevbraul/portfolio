@@ -562,11 +562,25 @@ html {
     }
 
     .section {
-        margin: 100px 15px; /* Menos margem lateral no celular */
-        padding: 40px 20px;
+        /* Espaçamento equilibrado entre as seções */
+        margin: 120px auto;
+
+        /* Espaço interno para manter o conteúdo confortável */
+        padding: 70px 50px;
     }
 
     .header-title {
         font-size: 1.3rem; /* Nome um pouco menor para caber na tela */
+    }
+
+    /* ==================================================
+   LEGIBILIDADE — SEÇÃO SOBRE MIM
+
+   Alinhamento dos parágrafos à esquerda para evitar
+   espaços desmecessários entre as palavras.
+================================================== */
+#sobre p {
+    text-align: left;
+    line-height: 1.8;
     }
 }
