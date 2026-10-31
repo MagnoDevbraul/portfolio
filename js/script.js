@@ -50,36 +50,61 @@ function updateProgressBar() {
  * A classe permanece ativa após a primeira
  * exibição para evitar animações repetidas.
  */
+
+/* ==================================================
+   ANIMAÇÃO SUAVE DAS SEÇÕES
+
+   Observa a posição das seções durante a rolagem
+   e ativa a animação quando entram na área visível.
+
+   A classe "active" é responsável por iniciar
+   a transição definida no arquivo "style.css"
+================================================== */
+
 function revealOnScroll() {
 
-    // Seleciona todas as seções que possuem animação.
+    // Seleciona todas as seções com animação.
     const sections = document.querySelectorAll('.scroll-reveal');
+
+    // Define o ponto de ativação em 85% da altura da janela.
+    const trigger = window.innerHeight * 0.85;
 
     sections.forEach(section => {
 
-        // Obtém a posição atual da seção na janela.
+        // Obtém a posição da seção na janela.
         const sectionTop = section.getBoundingClientRect().top;
 
-        // Define o ponto de ativação em 85% da altura da tela.
-        const trigger = window.innerHeight * 0.85;
-
-        // Ativa a animação quando a seção alcança esse ponto.
+        // Ativa a animação somente quando a seção
+        // alcança o ponto definido.
         if (sectionTop < trigger) {
             section.classList.add('active');
         }
     });
 }
 
-// 4. CENTRALIZAR SEÇÃO AO CLICAR NO MENU
+/* ==================================================
+   NAVEGAÇÃO DO MENU — CORREÇÃO DO CABEÇALHO FIXO
+
+   A seção para logo abaixo do cabeçalho,
+   sem centralização vertical e com rolagem suave.
+================================================== */
 document.querySelectorAll('.nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
+    anchor.addEventListener('click', function (event) {
         const targetId = this.getAttribute('href');
+        if (!targetId || !targetId.startsWith('#')) return;
+
         const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            const offsetPosition = (targetElement.offsetTop + (targetElement.offsetHeight / 2)) - (window.innerHeight / 2);
-            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-        }
+        if (!targetElement) return;
+
+        event.preventDefault();
+
+        const header = document.querySelector('.top-header');
+        const alturaHeader = header ? header.getBoundingClientRect().height : 0;
+        const folga = 20;
+        const topoDaSecao = targetElement.getBoundingClientRect().top + window.scrollY;
+        const destino = Math.max(0, topoDaSecao - alturaHeader - folga);
+
+        window.scrollTo({ top: destino, behavior: 'smooth' });
     });
 });
 

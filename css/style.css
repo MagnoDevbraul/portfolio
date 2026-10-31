@@ -118,6 +118,23 @@ nav a:hover {
     scroll-margin-top: 150px;
 }
 
+/* ==================================================
+   NAVEGAÇÃO — POSICIONAMENTO DAS SEÇÕES
+
+   Cria uma distância de segurança ao navegar
+   pelo menu com o cabeçalho fixo.
+
+   Evita que os títulos das seções fiquem
+   escondidos atrás do cabeçalho.
+================================================== */
+html {
+    scroll-padding-top: 100px;
+}
+
+.section {
+    scroll-margin-top: 100px;
+}
+
 /* SEÇÕES DOS CARDS */
 .section h2 {
     margin-bottom: 50px; /* Aumente este valor para afastar mais o nome dos cards */
@@ -436,11 +453,22 @@ textarea {
    elas aparecem suavemente na posição original.
 ================================================== */
 
-/* Estado inicial da seção */
+/* ==================================================
+   ANIMAÇÃO SUAVE DE ENTRADA DAS SEÇÕES
+
+   As seções começam transparentes e deslocadas.
+   Ao receberem a classe "active", aparecem
+   gradualmente, com movimento suave.
+================================================== */
+
 .scroll-reveal {
     opacity: 0;
     transform: translateY(40px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+
+    /* Entrada mais gradual */
+    transition:
+        opacity 1.5s ease-out,
+        transform 1.5s ease-out;
 }
 
 /* Estado visível após a ativação pelo JavaScript */
