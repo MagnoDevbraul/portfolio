@@ -37,10 +37,24 @@ body {
      margin-left: 20px;
      font-weight: 500; 
 }
-/* O efeito mágico ao passar o mouse */
-nav a:hover {
-    color: #fcfcfc; /* Use o mesmo roxo dos seus títulos */
-    text-shadow: 0 0 8px rgba(168, 85, 247, 0.6); /* Adiciona um brilho leve */
+
+/* ==================================================
+   MENU — EFEITOS HOVER E FOCO
+
+   Destaca os links ao passar o mouse ou
+   navegar utilizando o teclado.
+================================================== */
+
+.nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(188, 128, 255, 0.75);
+}
+
+/* Acessibilidade: destaque ao usar a tecla Tab */
+.nav a:focus-visible {
+    outline: 2px solid #bc80ff;
+    outline-offset: 5px;
+    border-radius: 3px;
 }
 
 /* PERFIL EM CÍRCULO COM BORDA ROXA */
@@ -331,7 +345,27 @@ html {
     margin: 15px auto; /* Centraliza o botão Ver Detalhes */
 }
 
-.btn-main:hover { background-color: #9d4edd !important; }
+/* ==================================================
+   EFEITO HOVER — BOTÕES PRINCIPAIS
+
+   Destaca o botão quando o visitante passa
+   o mouse, mantendo a identidade roxa.
+================================================== */
+.btn-main:hover:not(:disabled):not(.disabled) {
+    background-color: #9d4edd !important;
+
+    /* Elevação discreta */
+    transform: translateY(-3px);
+
+    /* Brilho roxo */
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.55);
+}
+
+/* Destaque para navegação pelo teclado */
+.btn-main:focus-visible {
+    outline: 2px solid #bc80ff;
+    outline-offset: 4px;
+}
 
 /* Botão desativado no formulário */
 .btn-main.disabled { 
@@ -546,9 +580,23 @@ textarea {
     box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
 }
 
+/* ==================================================
+   BOTÃO VOLTAR AO TOPO — HOVER E FOCO
+
+   Mantém o botão circular e a identidade roxa.
+   Aplica uma elevação discreta ao passar o mouse.
+================================================== */
+
 #scrollTop:hover {
     background-color: #9d4edd;
-    transform: rotate(-50deg) scale(1.1); /* Efeito de zoom no hover */
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.65);
+}
+
+/* Destaque para navegação pelo teclado */
+#scrollTop:focus-visible {
+    outline: 2px solid #bc80ff;
+    outline-offset: 4px;
 }
 
 /* Classe que o JavaScript vai adicionar ao rolar */
@@ -579,6 +627,7 @@ html {
     .nav a {
         margin: 5px 10px;
         font-size: 0.9rem;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
     }
 }
 
