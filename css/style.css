@@ -112,10 +112,21 @@ body {
     line-height: 1.5;   
 }
 
+/* ==================================================
+   RESPONSIVIDADE — APRESENTAÇÃO PROFISSIONAL
+
+   Melhora a legibilidade da descrição profissional
+   em celulares, preservando o alinhamento central.
+================================================== */
+
 @media (max-width: 768px) {
+
     .hero-text p {
-        font-size: 0.9rem; /* diminui o tamanho do texto no celular */
-        padding: 0 20px;
+        font-size: 1rem;
+        line-height: 1.6;
+        padding: 0 15px;
+        max-width: 100%;
+        text-align: center;
     }
 }
 
@@ -641,10 +652,10 @@ html {
 
     .section {
         /* Espaçamento equilibrado entre as seções */
-        margin: 120px auto;
+        margin: 55px auto;
 
         /* Espaço interno para manter o conteúdo confortável */
-        padding: 70px 50px;
+        padding: 45px 25px;
     }
 
     .header-title {
