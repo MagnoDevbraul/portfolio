@@ -389,7 +389,7 @@ html {
 /* FORMAÇÃO GRID - GARANTIR VISIBILIDADE */
 .formacao-grid { 
     display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
     gap: 20px; 
     margin-top: 40px; 
 }
@@ -672,7 +672,7 @@ html {
     text-align: left;
     line-height: 1.8;
     }
-
+}
     
 /* ==================================================
    RODAPÉ — IDENTIDADE PROFISSIONAL
@@ -724,4 +724,196 @@ html {
     padding-top: 20px;
 }
 
+/* Capacitações complementares */
+.cursos-container {
+    margin-top: 55px;
+}
+
+.cursos-titulo {
+    color: #a855f7;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+}
+
+.cursos-descricao {
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    max-width: 850px;
+}
+
+.cursos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.curso-card {
+    background: #151515;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 24px;
+    transition: transform 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.curso-card:hover {
+    transform: translateY(-4px);
+    border-color: #a855f7;
+}
+
+.curso-card h4 {
+    color: #bb86fc;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.curso-card p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+@media (max-width: 600px) {
+    .cursos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==========================================
+Cards secundários com destaque suave no hover
+========================================== */
+
+.competencias-container {
+    margin-top: 55px;
+}
+
+.competencias-titulo {
+    color: #a855f7;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+}
+
+.competencias-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.competencia-card {
+    background: #151515;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 24px;
+    transition: transform 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.competencia-card:hover {
+    transform: translateY(-4px);
+    border-color: #a855f7;
+}
+
+.competencia-card h4 {
+    color: #bb86fc;
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+}
+
+.competencia-card p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Celulares: uma coluna */
+@media (max-width: 600px) {
+    .competencias-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==========================================
+   EFEITO HOLOFOTE — APRESENTAÇÃO MAGNO DEV
+   Luz suave percorrendo o texto da direita
+   para a esquerda, sem deslocar as letras.
+========================================== */
+
+.hero-spotlight {
+    position: relative;
+    display: table;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+
+/* ==========================================
+   MAGNO DEV — BRILHO EXCLUSIVO NAS LETRAS
+   Movimento suave da esquerda para a direita
+========================================== */
+
+/* Texto principal */
+.hero-spotlight {
+    position: relative;
+    display: table;
+    max-width: 100%;
+    margin: 0 auto;
+
+    color: #bc80ff;
+    text-align: center;
+}
+
+/* Camada luminosa: somente o formato das letras */
+.hero-spotlight::after {
+    content: attr(data-text);
+
+    position: absolute;
+    inset: 0;
+
+    color: transparent;
+
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        transparent 48.5%,
+        rgba(235, 210, 255, 0.75) 50%,
+        transparent 51.5%,
+        transparent 100%
+    );
+
+    background-size: 250% 100%;
+    background-position: 100% center;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation: brilhoLetras 10s linear infinite;
+
+    pointer-events: none;
+}
+
+/* Deslocamento do reflexo luminoso */
+@keyframes brilhoLetras {
+    0%, 10% {
+        background-position: 100% center;
+    }
+
+    75%, 100% {
+        background-position: 0% center;
+    }
+}
+
+/* Respeita a preferência por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    .hero-spotlight::after {
+        animation: none;
+        display: none;
+    }
 }
