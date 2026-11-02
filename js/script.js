@@ -199,3 +199,17 @@ window.addEventListener('scroll', () => {
 setaTopo.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+
+/* ==================================================
+   ANO AUTOMÁTICO DO RODAPÉ
+
+   Atualiza o ano de direitos autorais conforme
+   o calendário, sem precisar editar o HTML.
+================================================== */
+
+const anoAtual = document.getElementById('ano-atual');
+
+if (anoAtual) {
+    anoAtual.textContent = new Date().getFullYear();
+}
