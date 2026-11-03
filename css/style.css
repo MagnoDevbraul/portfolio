@@ -676,9 +676,6 @@ html {
     
 /* ==================================================
    RODAPÉ — IDENTIDADE PROFISSIONAL
-
-   Mantém a aparência escura do portfólio,
-   com destaque roxo para o nome e o contato.
 ================================================== */
 
 .main-footer {
@@ -837,7 +834,6 @@ Cards secundários com destaque suave no hover
 
 
 /* ==========================================
-   EFEITO HOLOFOTE — APRESENTAÇÃO MAGNO DEV
    Luz suave percorrendo o texto da direita
    para a esquerda, sem deslocar as letras.
 ========================================== */
@@ -915,5 +911,136 @@ Cards secundários com destaque suave no hover
     .hero-spotlight::after {
         animation: none;
         display: none;
+    }
+}
+
+
+/* ==========================================
+   CARD DE DESTAQUE — MOD GESTÃO MUSICAL
+========================================== */
+
+/* Ocupa as duas colunas da formação */
+.formacao-card-projeto {
+    grid-column: 1 / -1;
+}
+
+/* Em telas pequenas, acompanha a coluna única */
+@media (max-width: 768px) {
+    .formacao-card-projeto {
+        grid-column: auto;
+    }
+}
+
+
+/* ==========================================
+   SEÇÃO 4 — TECNOLOGIAS E COMPETÊNCIAS
+   Portfólio Magno Dev v2.0
+========================================== */
+
+/* Texto introdutório */
+.tecnologias-descricao {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 850px;
+    margin: 0 0 30px;
+}
+
+/* Organização dos cards em duas colunas */
+.tecnologias-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Aparência principal dos cards */
+.tecnologia-card {
+    background: #151515;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 24px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Destaque discreto ao passar o mouse */
+.tecnologia-card:hover {
+    transform: translateY(-4px);
+    border-color: #a855f7;
+}
+
+/* Título de cada categoria */
+.tecnologia-card h3 {
+    color: #bb86fc;
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+}
+
+/* Lista das tecnologias */
+.tecnologia-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Cada tecnologia aparece como uma etiqueta */
+.tecnologia-card li {
+    color: #ddd;
+    background: #211a29;
+    border: 1px solid #49335e;
+    border-radius: 8px;
+
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Responsividade para celulares */
+@media (max-width: 600px) {
+    .tecnologias-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tecnologia-card {
+        padding: 20px;
+    }
+}
+
+
+/* ==========================================
+   CONTEXTO DAS COMPETÊNCIAS TÉCNICAS
+========================================== */
+
+.tecnologias-contexto {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.tecnologias-contexto p {
+    color: #ccc;
+    background: #151515;
+    border-left: 3px solid #a855f7;
+    border-radius: 8px;
+    padding: 16px 20px;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.tecnologias-contexto strong {
+    color: #bb86fc;
+}
+
+/* Ajuste para celulares */
+@media (max-width: 600px) {
+    .tecnologias-contexto {
+        grid-template-columns: 1fr;
     }
 }
