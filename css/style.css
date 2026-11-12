@@ -38,12 +38,12 @@ body {
      font-weight: 500; 
 }
 
-/* ==================================================
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    MENU — EFEITOS HOVER E FOCO
 
    Destaca os links ao passar o mouse ou
    navegar utilizando o teclado.
-================================================== */
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
 .nav a:hover {
     color: #ffffff;
@@ -112,12 +112,12 @@ body {
     line-height: 1.5;   
 }
 
-/* ==================================================
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    RESPONSIVIDADE — APRESENTAÇÃO PROFISSIONAL
 
    Melhora a legibilidade da descrição profissional
    em celulares, preservando o alinhamento central.
-================================================== */
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
 @media (max-width: 768px) {
 
@@ -144,7 +144,7 @@ body {
     scroll-margin-top: 150px;
 }
 
-/* ==================================================
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    NAVEGAÇÃO — POSICIONAMENTO DAS SEÇÕES
 
    Cria uma distância de segurança ao navegar
@@ -152,7 +152,7 @@ body {
 
    Evita que os títulos das seções fiquem
    escondidos atrás do cabeçalho.
-================================================== */
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 html {
     scroll-padding-top: 100px;
 }
@@ -250,12 +250,12 @@ html {
     width: auto; min-width: 160px; 
 }
 
-/* ==================================================
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    FORMULÁRIO DE CONTATO
 
    Organiza os campos verticalmente e centraliza
    o formulário, limitando sua largura máxima.
-================================================== */
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -265,12 +265,12 @@ html {
     font-size: 20px;
 }
 
-/* ==================================================
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    AGRUPAMENTO DOS CAMPOS DO FORMULÁRIO
 
    Organiza os campos Nome e E-mail lado a lado.
    Separando esses campos da área destinada à mensagem inferior.
-================================================== */
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 .input-group {
     display: flex;
     gap: 15px;
@@ -357,12 +357,12 @@ html {
     margin: 15px auto; /* Centraliza o botão Ver Detalhes */
 }
 
-/* ==================================================
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    EFEITO HOVER — BOTÕES PRINCIPAIS
 
    Destaca o botão quando o visitante passa
    o mouse, mantendo a identidade roxa.
-================================================== */
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 .btn-main:hover:not(:disabled):not(.disabled) {
     background-color: #9d4edd !important;
 
@@ -410,10 +410,10 @@ html {
     min-height: 150px;
 }
 
-/* ==================================================
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    TÍTULOS DOS CARDS DE FORMAÇÃO
  centraliza o conteúdo nos cards.
-================================================== */
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 .formacao-card h3 {
     margin: 0;
 }
@@ -489,23 +489,14 @@ textarea {
     cursor: pointer;
 }
 
-/* ==================================================
-   ANIMAÇÃO DE ENTRADA DAS SEÇÕES
 
-   As seções começam transparentes e deslocadas
-   40 pixels para baixo.
-
-   Quando o JavaScript adiciona a classe "active",
-   elas aparecem suavemente na posição original.
-================================================== */
-
-/* ==================================================
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    ANIMAÇÃO SUAVE DE ENTRADA DAS SEÇÕES
 
    As seções começam transparentes e deslocadas.
    Ao receberem a classe "active", aparecem
    gradualmente, com movimento suave.
-================================================== */
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
 .scroll-reveal {
     opacity: 0;
@@ -539,7 +530,7 @@ textarea {
     100% { border-right: none } 
 }
 
-/* ==================================================
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    BARRA DE PROGRESSO DA PÁGINA
 
    A barra fica posicionada na parte inferior
@@ -548,7 +539,7 @@ textarea {
 
    O JavaScript atualiza dinamicamente a largura
    do elemento .progress-bar durante a rolagem.
-================================================== */
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
 /* Contêiner que ocupa toda a largura do cabeçalho */
 .progress-container {
@@ -592,12 +583,12 @@ textarea {
     box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
 }
 
-/* ==================================================
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    BOTÃO VOLTAR AO TOPO — HOVER E FOCO
 
    Mantém o botão circular e a identidade roxa.
    Aplica uma elevação discreta ao passar o mouse.
-================================================== */
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
 #scrollTop:hover {
     background-color: #9d4edd;
@@ -662,21 +653,21 @@ html {
         font-size: 1.3rem; /* Nome um pouco menor para caber na tela */
     }
 
-    /* ==================================================
+    /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    LEGIBILIDADE — SEÇÃO SOBRE MIM
 
    Alinhamento dos parágrafos à esquerda para evitar
    espaços desmecessários entre as palavras.
-================================================== */
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 #sobre p {
     text-align: left;
     line-height: 1.8;
     }
 }
     
-/* ==================================================
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    RODAPÉ — IDENTIDADE PROFISSIONAL
-================================================== */
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
 .main-footer {
     padding: 40px 20px;
@@ -779,9 +770,9 @@ html {
 }
 
 
-/* ==========================================
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Cards secundários com destaque suave no hover
-========================================== */
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
 .competencias-container {
     margin-top: 55px;
@@ -833,10 +824,10 @@ Cards secundários com destaque suave no hover
 }
 
 
-/* ==========================================
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    Luz suave percorrendo o texto da direita
    para a esquerda, sem deslocar as letras.
-========================================== */
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
 .hero-spotlight {
     position: relative;
@@ -848,10 +839,10 @@ Cards secundários com destaque suave no hover
 }
 
 
-/* ==========================================
-   MAGNO DEV — BRILHO EXCLUSIVO NAS LETRAS
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    BRILHO EXCLUSIVO NAS LETRAS
    Movimento suave da esquerda para a direita
-========================================== */
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
 /* Texto principal */
 .hero-spotlight {
@@ -915,9 +906,9 @@ Cards secundários com destaque suave no hover
 }
 
 
-/* ==========================================
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    CARD DE DESTAQUE — MOD GESTÃO MUSICAL
-========================================== */
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
 /* Ocupa as duas colunas da formação */
 .formacao-card-projeto {
@@ -932,10 +923,10 @@ Cards secundários com destaque suave no hover
 }
 
 
-/* ==========================================
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    SEÇÃO 4 — TECNOLOGIAS E COMPETÊNCIAS
    Portfólio Magno Dev v2.0
-========================================== */
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
 /* Texto introdutório */
 .tecnologias-descricao {
@@ -1013,9 +1004,9 @@ Cards secundários com destaque suave no hover
 }
 
 
-/* ==========================================
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    CONTEXTO DAS COMPETÊNCIAS TÉCNICAS
-========================================== */
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
 .tecnologias-contexto {
     display: grid;
@@ -1042,5 +1033,564 @@ Cards secundários com destaque suave no hover
 @media (max-width: 600px) {
     .tecnologias-contexto {
         grid-template-columns: 1fr;
+    }
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   SEÇÃO 5 — PROJETO PRINCIPAL: MOD
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* MOD ocupa as duas colunas do portfólio */
+#portfolio .projects-grid > .project-card-featured {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+}
+
+/* Organiza os três botões horizontalmente */
+#portfolio .project-featured-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Padroniza os três botões */
+#portfolio .project-featured-links .btn-main {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 1 200px;
+    min-width: 0;
+    min-height: 46px;
+
+    padding: 12px 16px;
+    margin: 0;
+
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    font: inherit;
+    font-weight: bold;
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+/* Estudo de caso permanece oculto inicialmente */
+#estudo-caso-mod[hidden] {
+    display: none;
+}
+
+/* Celulares: uma coluna e botões empilhados */
+@media (max-width: 600px) {
+
+    #portfolio .projects-grid > .project-card-featured {
+        grid-column: 1;
+    }
+
+    #portfolio .project-featured-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    #portfolio .project-featured-links .btn-main {
+        flex: none;
+        width: 100%;
+        min-height: 46px;
+    }
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   ESTUDO DE CASO — MOD GESTÃO MUSICAL
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* Mantém o conteúdo oculto até a abertura */
+.estudo-caso-mod[hidden] {
+    display: none;
+}
+
+/* Área expandida do estudo de caso */
+.estudo-caso-mod {
+    margin: 25px 0;
+    padding: 25px;
+    background: #151515;
+    border: 1px solid #49335e;
+    border-radius: 12px;
+    text-align: left;
+}
+
+/* Título principal */
+.estudo-caso-mod h4 {
+    color: #bb86fc;
+    font-size: 1.35rem;
+    margin-bottom: 22px;
+}
+
+/* Separação entre os assuntos */
+.estudo-caso-bloco {
+    margin-bottom: 20px;
+}
+
+.estudo-caso-bloco:last-child {
+    margin-bottom: 0;
+}
+
+/* Subtítulos */
+.estudo-caso-bloco h5 {
+    color: #d1a3ff;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+/* Textos descritivos */
+.estudo-caso-bloco p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 600px) {
+    .estudo-caso-mod {
+        padding: 18px;
+    }
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   ARQUITETURA DO MOD — ESTUDO DE CASO
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* Organiza as camadas verticalmente */
+.mod-arquitetura {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Cada camada da arquitetura */
+.mod-arquitetura-camada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    width: 100%;
+    max-width: 520px;
+    padding: 18px;
+
+    background: #211a29;
+    border: 1px solid #70429b;
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+/* Nome da tecnologia */
+.mod-arquitetura-camada strong {
+    color: #d1a3ff;
+    font-size: 1rem;
+}
+
+/* Responsabilidade da camada */
+.mod-arquitetura-camada span {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Comunicação entre as camadas */
+.mod-arquitetura-conexao {
+    color: #bb86fc;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   ETAPA 5.5 — RECURSOS TÉCNICOS DO MOD
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* Listas de funcionalidades do estudo de caso */
+.estudo-caso-mod .mod-recursos-lista {
+    list-style: disc;
+    padding-left: 24px;
+    margin: 12px 0 18px;
+}
+
+/* Espaçamento e legibilidade dos itens */
+.estudo-caso-mod .mod-recursos-lista li {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+/* Destaque discreto dos marcadores */
+.estudo-caso-mod .mod-recursos-lista li::marker {
+    color: #a855f7;
+}
+
+/* Separação visual entre os blocos técnicos */
+.estudo-caso-mod .estudo-caso-bloco {
+    margin-bottom: 26px;
+}
+
+/* Ajustes de leitura para dispositivos móveis */
+@media (max-width: 600px) {
+    .estudo-caso-mod .mod-recursos-lista {
+        padding-left: 20px;
+    }
+
+    .estudo-caso-mod .mod-recursos-lista li {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   ETAPA 5.6 — COFRINHO PRO
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* Card secundário: segue o layout da grid */
+.project-card-cofrinho {
+    min-width: 0;
+}
+
+/* Identificação discreta */
+.project-secondary-label {
+    padding: 12px 20px;
+    color: #bb86fc;
+    background: #19141f;
+    border-bottom: 1px solid #49335e;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Lista das principais funcionalidades */
+.project-card-cofrinho .project-features {
+    margin: 18px 0;
+    padding-left: 24px;
+    text-align: left;
+}
+
+.project-card-cofrinho .project-features li {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.project-card-cofrinho .project-features li::marker {
+    color: #a855f7;
+}
+
+/* Tecnologias utilizadas */
+.project-card-cofrinho .project-tech-stack {
+    color: #bb86fc;
+    font-size: 0.9rem;
+    margin: 18px 0;
+    line-height: 1.6;
+}
+
+/* Link no mesmo padrão dos botões */
+.project-card-cofrinho a.btn-main {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 15px auto;
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   ETAPA 5.7 — BAOZI STORE API
+   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* Mantém o card adaptável à grid existente */
+.project-card-baozi {
+    min-width: 0;
+}
+
+/* Lista das funcionalidades */
+.project-card-baozi .project-features {
+    margin: 18px 0;
+    padding-left: 24px;
+    text-align: left;
+}
+
+.project-card-baozi .project-features li {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.project-card-baozi .project-features li::marker {
+    color: #a855f7;
+}
+
+/* Tecnologias utilizadas */
+.project-card-baozi .project-tech-stack {
+    color: #bb86fc;
+    font-size: 0.9rem;
+    margin: 18px 0;
+    line-height: 1.6;
+}
+
+/* Botão do repositório */
+.project-card-baozi a.btn-main {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 15px auto;
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   MOD — CARROSSEL CONTÍNUO E INFINITO
+   Mesmo conceito dos carrosséis antigos
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* Área visível */
+.slider-container-mod {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    background: #101010;
+}
+
+/* Faixa horizontal com duas sequências iguais */
+.slider-container-mod #track-mod {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+
+    width: max-content;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    /* Animação contínua, sem paradas */
+    animation: rolagem-infinita-mod 48s linear infinite;
+
+    /* Não usar a transição do slider anterior */
+    transition: none;
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   MOD — IMAGENS SEM ESPAÇOS LATERAIS
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+.slider-container-mod #track-mod img {
+    display: block;
+
+    /* Cada captura mantém sua proporção original */
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none;
+
+    /* Altura uniforme para todas as imagens */
+    height: 320px;
+
+    /* Impede o JavaScript "antigo" de fixar larguras */
+    flex: 0 0 auto !important;
+
+    /* Remove os espaçamentos entre as imagens*/
+    margin: 0;
+    padding: 0;
+
+    /* Preserva toda a captura, sem distorção */
+    object-fit: contain;
+    background: transparent;
+}
+
+/* Altura reduzida em celulares */
+@media (max-width: 600px) {
+    .slider-container-mod #track-mod img {
+        height: 220px;
+    }
+}
+
+
+/* Desloca exatamente metade da faixa duplicada */
+@keyframes rolagem-infinita-mod {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pausa para observar as capturas */
+.slider-container-mod:hover #track-mod {
+    animation-play-state: paused;
+}
+
+/* Altura adaptada para celulares */
+@media (max-width: 600px) {
+    .slider-container-mod {
+        height: 220px;
+    }
+}
+
+/* Respeita a preferência por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    .slider-container-mod #track-mod {
+        animation: none;
+    }
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   AJUSTE DE ESPAÇAMENTO — PORTFÓLIO
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* Reduz o espaço interno superior da seção */
+#portfolio {
+    padding-top: 30px;
+}
+
+/* Aproxima o título do carrossel */
+#portfolio > h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   CARROSSEL — COFRINHO PRO (Rolagem contínua e suave)
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+.slider-container-cofrinho {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #101010;
+}
+
+.slider-container-cofrinho #track-cofrinho {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+    width: max-content;
+    height: 100%;
+    animation: rolagem-cofrinho 24s linear infinite;
+}
+
+.slider-container-cofrinho #track-cofrinho img {
+    display: block;
+    width: 320px;
+    height: 220px;
+    flex: 0 0 320px;
+    object-fit: contain;
+    background: #101010;
+}
+
+@keyframes rolagem-cofrinho {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pausa ao posicionar o mouse */
+.slider-container-cofrinho:hover #track-cofrinho {
+    animation-play-state: paused;
+}
+
+/* Adaptação para telas menores */
+@media (max-width: 600px) {
+
+    .slider-container-cofrinho {
+        height: 180px;
+    }
+
+    .slider-container-cofrinho #track-cofrinho img {
+        height: 180px;
+    }
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   CARROSSEL — BAOZI STORE API (Rolagem contínua)
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+.slider-container-baozi {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #101010;
+}
+
+.slider-container-baozi #track-baozi {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+    width: max-content;
+    height: 100%;
+    animation: rolagem-baozi 40s linear infinite;
+}
+
+.slider-container-baozi #track-baozi img {
+    display: block;
+    width: auto;
+    height: 220px;
+    min-width: 0;
+    max-width: none;
+    flex: 0 0 auto;
+    object-fit: contain;
+    background: #101010;
+
+    /* Remove os espaçamentos entre as imagens */
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+@keyframes rolagem-baozi {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pausa ao posicionar o mouse */
+.slider-container-baozi:hover #track-baozi {
+    animation-play-state: paused;
+}
+
+@media (max-width: 600px) {
+
+    .slider-container-baozi {
+        height: 180px;
+    }
+
+    .slider-container-baozi #track-baozi img {
+        height: 180px;
     }
 }
