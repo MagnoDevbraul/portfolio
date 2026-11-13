@@ -1594,3 +1594,41 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
         height: 180px;
     }
 }
+
+
+/* ==========================================
+   BOTÃO — DOWNLOAD DO CURRÍCULO
+========================================== */
+
+.btn-curriculo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+    padding: 12px 24px;
+
+    border: 1px solid currentColor;
+    border-radius: 8px;
+
+    color: inherit;
+    background: transparent;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    cursor: pointer;
+    transition: transform 0.2s ease,
+                background-color 0.2s ease;
+}
+
+.btn-curriculo:hover {
+    transform: translateY(-2px);
+    background-color: rgba(128, 128, 128, 0.12);
+}
+
+.btn-curriculo:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
