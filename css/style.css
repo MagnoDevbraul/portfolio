@@ -9,11 +9,6 @@ body {
     color: #e0e0e0; 
 }
 
-.no-select { 
-    -webkit-user-select: none; 
-    user-select: none; 
-}
-
 /* CABEÇALHO */
 .top-header { 
     background: #0a0a0a; 
@@ -42,10 +37,24 @@ body {
      margin-left: 20px;
      font-weight: 500; 
 }
-/* O efeito mágico ao passar o mouse */
-nav a:hover {
-    color: #fcfcfc; /* Use o mesmo roxo dos seus títulos */
-    text-shadow: 0 0 8px rgba(168, 85, 247, 0.6); /* Adiciona um brilho leve */
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   MENU — EFEITOS HOVER E FOCO
+
+   Destaca os links ao passar o mouse ou
+   navegar utilizando o teclado.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+.nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(188, 128, 255, 0.75);
+}
+
+/* Acessibilidade: destaque ao usar a tecla Tab */
+.nav a:focus-visible {
+    outline: 2px solid #bc80ff;
+    outline-offset: 5px;
+    border-radius: 3px;
 }
 
 /* PERFIL EM CÍRCULO COM BORDA ROXA */
@@ -93,6 +102,7 @@ nav a:hover {
 .hero-text { 
     color: #bc80ff; 
     font-weight: 500; 
+    text-align: center;
 }
 .hero-text p {
     word-wrap: break-word; /* quebra de frases grandes */
@@ -102,10 +112,21 @@ nav a:hover {
     line-height: 1.5;   
 }
 
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   RESPONSIVIDADE — APRESENTAÇÃO PROFISSIONAL
+
+   Melhora a legibilidade da descrição profissional
+   em celulares, preservando o alinhamento central.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
 @media (max-width: 768px) {
+
     .hero-text p {
-        font-size: 0.9rem; /* diminui o tamanho do texto no celular */
-        padding: 0 20px;
+        font-size: 1rem;
+        line-height: 1.6;
+        padding: 0 15px;
+        max-width: 100%;
+        text-align: center;
     }
 }
 
@@ -121,6 +142,23 @@ nav a:hover {
     /* SOLUÇÃO PARA O SCROLL: */
     /* Esse valor faz a seção "parar" antes de encostar no topo */
     scroll-margin-top: 150px;
+}
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   NAVEGAÇÃO — POSICIONAMENTO DAS SEÇÕES
+
+   Cria uma distância de segurança ao navegar
+   pelo menu com o cabeçalho fixo.
+
+   Evita que os títulos das seções fiquem
+   escondidos atrás do cabeçalho.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+html {
+    scroll-padding-top: 100px;
+}
+
+.section {
+    scroll-margin-top: 100px;
 }
 
 /* SEÇÕES DOS CARDS */
@@ -212,19 +250,33 @@ nav a:hover {
     width: auto; min-width: 160px; 
 }
 
-/* AJUSTE DE FORMULÁRIO */
-.contact-form { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 15px; 
-    max-width: 600px; 
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   FORMULÁRIO DE CONTATO
+
+   Organiza os campos verticalmente e centraliza
+   o formulário, limitando sua largura máxima.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 700px;
     margin: 0 auto;
-    font-size: 20px; 
+    font-size: 20px;
 }
-.input-group { 
-    display: flex; 
-    gap: 15px; 
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   AGRUPAMENTO DOS CAMPOS DO FORMULÁRIO
+
+   Organiza os campos Nome e E-mail lado a lado.
+   Separando esses campos da área destinada à mensagem inferior.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+.input-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
 }
+
 .input-group input { flex: 1; }
 .contact-form input, .contact-form textarea { 
     width: 100%; 
@@ -305,7 +357,27 @@ nav a:hover {
     margin: 15px auto; /* Centraliza o botão Ver Detalhes */
 }
 
-.btn-main:hover { background-color: #9d4edd !important; }
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   EFEITO HOVER — BOTÕES PRINCIPAIS
+
+   Destaca o botão quando o visitante passa
+   o mouse, mantendo a identidade roxa.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+.btn-main:hover:not(:disabled):not(.disabled) {
+    background-color: #9d4edd !important;
+
+    /* Elevação discreta */
+    transform: translateY(-3px);
+
+    /* Brilho roxo */
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.55);
+}
+
+/* Destaque para navegação pelo teclado */
+.btn-main:focus-visible {
+    outline: 2px solid #bc80ff;
+    outline-offset: 4px;
+}
 
 /* Botão desativado no formulário */
 .btn-main.disabled { 
@@ -317,7 +389,7 @@ nav a:hover {
 /* FORMAÇÃO GRID - GARANTIR VISIBILIDADE */
 .formacao-grid { 
     display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
     gap: 20px; 
     margin-top: 40px; 
 }
@@ -337,7 +409,12 @@ nav a:hover {
     justify-content: center;
     min-height: 150px;
 }
-.card-formacao h3 {
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   TÍTULOS DOS CARDS DE FORMAÇÃO
+ centraliza o conteúdo nos cards.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+.formacao-card h3 {
     margin: 0;
 }
 
@@ -356,16 +433,6 @@ nav a:hover {
 
 .formacao-card:hover .hover-info { transform: translateY(0); }
 
-/* FORMULÁRIO */
-.contact-form { 
-    max-width: 700px; 
-    margin: 0 auto; 
-}
-.input-group { 
-    display: flex; 
-    gap: 15px; 
-    margin-bottom: 15px; 
-}
 .input-group input { 
     flex: 1; 
     padding: 15px; 
@@ -421,36 +488,30 @@ textarea {
     box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
     cursor: pointer;
 }
-/* Estado inicial das seções para o efeito de surgir */
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   ANIMAÇÃO SUAVE DE ENTRADA DAS SEÇÕES
+
+   As seções começam transparentes e deslocadas.
+   Ao receberem a classe "active", aparecem
+   gradualmente, com movimento suave.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
 .scroll-reveal {
     opacity: 0;
     transform: translateY(40px);
-    transition: all 1s ease-out;
+
+    /* Entrada mais gradual */
+    transition:
+        opacity 1.5s ease-out,
+        transform 1.5s ease-out;
 }
 
-/* Quando ativado pelo scroll */
+/* Estado visível após a ativação pelo JavaScript */
 .scroll-reveal.active {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Container da barra (fixo no fundo do header) */
-.progress-container {
-    width: 100%;
-    height: 4px;
-    background: transparent;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-/* A barra de progresso propriamente dita */
-.progress-bar {
-    height: 4px;
-    background: #8a2be2; /* Seu roxo padrão */
-    width: 0%; /* Começa em 0 */
-    box-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
-    transition: width 0.1s ease; /* Suaviza a mudança */
 }
 
 /* EFEITO MÁQUINA DE ESCREVER */
@@ -469,7 +530,18 @@ textarea {
     100% { border-right: none } 
 }
 
-/* BARRA DE PROGRESSO DINÂMICA */
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   BARRA DE PROGRESSO DA PÁGINA
+
+   A barra fica posicionada na parte inferior
+   do cabeçalho e indica quanto da página
+   o visitante já percorreu.
+
+   O JavaScript atualiza dinamicamente a largura
+   do elemento .progress-bar durante a rolagem.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* Contêiner que ocupa toda a largura do cabeçalho */
 .progress-container {
     width: 100%;
     height: 4px;
@@ -479,24 +551,13 @@ textarea {
     left: 0;
 }
 
+/* Indicador visual do progresso de rolagem */
 .progress-bar {
     height: 100%;
     background: #8a2be2;
     width: 0%;
     box-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
     transition: width 0.2s ease-out;
-}
-
-/* REVEAL DAS SEÇÕES */
-.scroll-reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 2.5s cubic-bezier(2.5, 3, 2.5, 3);
-}
-
-.scroll-reveal.active {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* BOTÃO VOLTAR AO TOPO */
@@ -522,9 +583,23 @@ textarea {
     box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
 }
 
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   BOTÃO VOLTAR AO TOPO — HOVER E FOCO
+
+   Mantém o botão circular e a identidade roxa.
+   Aplica uma elevação discreta ao passar o mouse.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
 #scrollTop:hover {
     background-color: #9d4edd;
-    transform: rotate(-50deg) scale(1.1); /* Efeito de zoom no hover */
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.65);
+}
+
+/* Destaque para navegação pelo teclado */
+#scrollTop:focus-visible {
+    outline: 2px solid #bc80ff;
+    outline-offset: 4px;
 }
 
 /* Classe que o JavaScript vai adicionar ao rolar */
@@ -555,6 +630,7 @@ html {
     .nav a {
         margin: 5px 10px;
         font-size: 0.9rem;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
     }
 }
 
@@ -566,11 +642,1227 @@ html {
     }
 
     .section {
-        margin: 100px 15px; /* Menos margem lateral no celular */
-        padding: 40px 20px;
+        /* Espaçamento equilibrado entre as seções */
+        margin: 55px auto;
+
+        /* Espaço interno para manter o conteúdo confortável */
+        padding: 45px 25px;
     }
 
     .header-title {
         font-size: 1.3rem; /* Nome um pouco menor para caber na tela */
     }
+
+    /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   LEGIBILIDADE — SEÇÃO SOBRE MIM
+
+   Alinhamento dos parágrafos à esquerda para evitar
+   espaços desmecessários entre as palavras.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+#sobre p {
+    text-align: left;
+    line-height: 1.8;
+    }
+}
+    
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   RODAPÉ — IDENTIDADE PROFISSIONAL
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+.main-footer {
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+.footer-name {
+    color: #bc80ff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.footer-profession {
+    color: #dedede;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.footer-email {
+    display: inline-block;
+    color: #bc80ff;
+    text-decoration: none;
+    margin-bottom: 22px;
+    transition: color 0.3s ease;
+}
+
+.footer-email:hover {
+    color: #ffffff;
+}
+
+.footer-email:focus-visible {
+    outline: 2px solid #bc80ff;
+    outline-offset: 4px;
+}
+
+.footer-copyright {
+    color: #888;
+    font-size: 0.85rem;
+    border-top: 1px solid #222;
+    padding-top: 20px;
+}
+
+/* Capacitações complementares */
+.cursos-container {
+    margin-top: 55px;
+}
+
+.cursos-titulo {
+    color: #a855f7;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+}
+
+.cursos-descricao {
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    max-width: 850px;
+}
+
+.cursos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.curso-card {
+    background: #151515;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 24px;
+    transition: transform 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.curso-card:hover {
+    transform: translateY(-4px);
+    border-color: #a855f7;
+}
+
+.curso-card h4 {
+    color: #bb86fc;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.curso-card p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+@media (max-width: 600px) {
+    .cursos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Cards secundários com destaque suave no hover
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+.competencias-container {
+    margin-top: 55px;
+}
+
+.competencias-titulo {
+    color: #a855f7;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+}
+
+.competencias-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.competencia-card {
+    background: #151515;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 24px;
+    transition: transform 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.competencia-card:hover {
+    transform: translateY(-4px);
+    border-color: #a855f7;
+}
+
+.competencia-card h4 {
+    color: #bb86fc;
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+}
+
+.competencia-card p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Celulares: uma coluna */
+@media (max-width: 600px) {
+    .competencias-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   Luz suave percorrendo o texto da direita
+   para a esquerda, sem deslocar as letras.
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+.hero-spotlight {
+    position: relative;
+    display: table;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    BRILHO EXCLUSIVO NAS LETRAS
+   Movimento suave da esquerda para a direita
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* Texto principal */
+.hero-spotlight {
+    position: relative;
+    display: table;
+    max-width: 100%;
+    margin: 0 auto;
+
+    color: #bc80ff;
+    text-align: center;
+}
+
+/* Camada luminosa: somente o formato das letras */
+.hero-spotlight::after {
+    content: attr(data-text);
+
+    position: absolute;
+    inset: 0;
+
+    color: transparent;
+
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        transparent 48.5%,
+        rgba(235, 210, 255, 0.75) 50%,
+        transparent 51.5%,
+        transparent 100%
+    );
+
+    background-size: 250% 100%;
+    background-position: 100% center;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation: brilhoLetras 10s linear infinite;
+
+    pointer-events: none;
+}
+
+/* Deslocamento do reflexo luminoso */
+@keyframes brilhoLetras {
+    0%, 10% {
+        background-position: 100% center;
+    }
+
+    75%, 100% {
+        background-position: 0% center;
+    }
+}
+
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   ACESSIBILIDADE — MOVIMENTO REDUZIDO
+   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+@media (prefers-reduced-motion: reduce) {
+
+    /* Remove o efeito luminoso animado */
+    .hero-spotlight::after {
+        animation: none;
+        display: none;
+    }
+
+    /* Interrompe os três carrosséis automáticos */
+    .slider-container-mod #track-mod,
+    .slider-container-cofrinho #track-cofrinho,
+    .slider-container-baozi #track-baozi {
+        animation: none;
+        transform: translateX(0);
+    }
+}
+
+
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   CARD DE DESTAQUE — MOD GESTÃO MUSICAL
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* Ocupa as duas colunas da formação */
+.formacao-card-projeto {
+    grid-column: 1 / -1;
+}
+
+/* Em telas pequenas, acompanha a coluna única */
+@media (max-width: 768px) {
+    .formacao-card-projeto {
+        grid-column: auto;
+    }
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   TECNOLOGIAS E COMPETÊNCIAS
+   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* Texto introdutório */
+.tecnologias-descricao {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 850px;
+    margin: 0 0 30px;
+}
+
+/* Organização dos cards em duas colunas */
+.tecnologias-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Aparência principal dos cards */
+.tecnologia-card {
+    background: #151515;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 24px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Destaque discreto ao passar o mouse */
+.tecnologia-card:hover {
+    transform: translateY(-4px);
+    border-color: #a855f7;
+}
+
+/* Título de cada categoria */
+.tecnologia-card h3 {
+    color: #bb86fc;
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+}
+
+/* Lista das tecnologias */
+.tecnologia-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Cada tecnologia aparece como uma etiqueta */
+.tecnologia-card li {
+    color: #ddd;
+    background: #211a29;
+    border: 1px solid #49335e;
+    border-radius: 8px;
+
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Responsividade para celulares */
+@media (max-width: 600px) {
+    .tecnologias-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tecnologia-card {
+        padding: 20px;
+    }
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   CONTEXTO DAS COMPETÊNCIAS TÉCNICAS
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+.tecnologias-contexto {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.tecnologias-contexto p {
+    color: #ccc;
+    background: #151515;
+    border-left: 3px solid #a855f7;
+    border-radius: 8px;
+    padding: 16px 20px;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.tecnologias-contexto strong {
+    color: #bb86fc;
+}
+
+/* Ajuste para celulares */
+@media (max-width: 600px) {
+    .tecnologias-contexto {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   SEÇÃO 5 — PROJETO PRINCIPAL: MOD
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* MOD ocupa as duas colunas do portfólio */
+#portfolio .projects-grid > .project-card-featured {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+}
+
+/* Organiza os três botões horizontalmente */
+#portfolio .project-featured-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Padroniza os três botões */
+#portfolio .project-featured-links .btn-main {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 1 200px;
+    min-width: 0;
+    min-height: 46px;
+
+    padding: 12px 16px;
+    margin: 0;
+
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    font: inherit;
+    font-weight: bold;
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+/* Estudo de caso permanece oculto inicialmente */
+#estudo-caso-mod[hidden] {
+    display: none;
+}
+
+/* Celulares: uma coluna e botões empilhados */
+@media (max-width: 600px) {
+
+    #portfolio .projects-grid > .project-card-featured {
+        grid-column: 1;
+    }
+
+    #portfolio .project-featured-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    #portfolio .project-featured-links .btn-main {
+        flex: none;
+        width: 100%;
+        min-height: 46px;
+    }
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   ESTUDO DE CASO — MOD GESTÃO MUSICAL
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* Mantém o conteúdo oculto até a abertura */
+.estudo-caso-mod[hidden] {
+    display: none;
+}
+
+/* Área expandida do estudo de caso */
+.estudo-caso-mod {
+    margin: 25px 0;
+    padding: 25px;
+    background: #151515;
+    border: 1px solid #49335e;
+    border-radius: 12px;
+    text-align: left;
+}
+
+/* Título principal */
+.estudo-caso-mod h4 {
+    color: #bb86fc;
+    font-size: 1.35rem;
+    margin-bottom: 22px;
+}
+
+/* Separação entre os assuntos */
+.estudo-caso-bloco {
+    margin-bottom: 20px;
+}
+
+.estudo-caso-bloco:last-child {
+    margin-bottom: 0;
+}
+
+/* Subtítulos */
+.estudo-caso-bloco h5 {
+    color: #d1a3ff;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+/* Textos descritivos */
+.estudo-caso-bloco p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 600px) {
+    .estudo-caso-mod {
+        padding: 18px;
+    }
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   ARQUITETURA DO MOD — ESTUDO DE CASO
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* Organiza as camadas verticalmente */
+.mod-arquitetura {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Cada camada da arquitetura */
+.mod-arquitetura-camada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    width: 100%;
+    max-width: 520px;
+    padding: 18px;
+
+    background: #211a29;
+    border: 1px solid #70429b;
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+/* Nome da tecnologia */
+.mod-arquitetura-camada strong {
+    color: #d1a3ff;
+    font-size: 1rem;
+}
+
+/* Responsabilidade da camada */
+.mod-arquitetura-camada span {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Comunicação entre as camadas */
+.mod-arquitetura-conexao {
+    color: #bb86fc;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   ETAPA 5.5 — RECURSOS TÉCNICOS DO MOD
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* Listas de funcionalidades do estudo de caso */
+.estudo-caso-mod .mod-recursos-lista {
+    list-style: disc;
+    padding-left: 24px;
+    margin: 12px 0 18px;
+}
+
+/* Espaçamento e legibilidade dos itens */
+.estudo-caso-mod .mod-recursos-lista li {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+/* Destaque discreto dos marcadores */
+.estudo-caso-mod .mod-recursos-lista li::marker {
+    color: #a855f7;
+}
+
+/* Separação visual entre os blocos técnicos */
+.estudo-caso-mod .estudo-caso-bloco {
+    margin-bottom: 26px;
+}
+
+/* Ajustes de leitura para dispositivos móveis */
+@media (max-width: 600px) {
+    .estudo-caso-mod .mod-recursos-lista {
+        padding-left: 20px;
+    }
+
+    .estudo-caso-mod .mod-recursos-lista li {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   ETAPA 5.6 — COFRINHO PRO
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* Card secundário: segue o layout da grid */
+.project-card-cofrinho {
+    min-width: 0;
+}
+
+/* Identificação discreta */
+.project-secondary-label {
+    padding: 12px 20px;
+    color: #bb86fc;
+    background: #19141f;
+    border-bottom: 1px solid #49335e;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Lista das principais funcionalidades */
+.project-card-cofrinho .project-features {
+    margin: 18px 0;
+    padding-left: 24px;
+    text-align: left;
+}
+
+.project-card-cofrinho .project-features li {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.project-card-cofrinho .project-features li::marker {
+    color: #a855f7;
+}
+
+/* Tecnologias utilizadas */
+.project-card-cofrinho .project-tech-stack {
+    color: #bb86fc;
+    font-size: 0.9rem;
+    margin: 18px 0;
+    line-height: 1.6;
+}
+
+/* Link no mesmo padrão dos botões */
+.project-card-cofrinho a.btn-main {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 15px auto;
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   ETAPA 5.7 — BAOZI STORE API
+   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* Mantém o card adaptável à grid existente */
+.project-card-baozi {
+    min-width: 0;
+}
+
+/* Lista das funcionalidades */
+.project-card-baozi .project-features {
+    margin: 18px 0;
+    padding-left: 24px;
+    text-align: left;
+}
+
+.project-card-baozi .project-features li {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.project-card-baozi .project-features li::marker {
+    color: #a855f7;
+}
+
+/* Tecnologias utilizadas */
+.project-card-baozi .project-tech-stack {
+    color: #bb86fc;
+    font-size: 0.9rem;
+    margin: 18px 0;
+    line-height: 1.6;
+}
+
+/* Botão do repositório */
+.project-card-baozi a.btn-main {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 15px auto;
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   MOD — CARROSSEL CONTÍNUO E INFINITO
+   Mesmo conceito dos carrosséis antigos
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* Área visível */
+.slider-container-mod {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    background: #101010;
+}
+
+/* Faixa horizontal com duas sequências iguais */
+.slider-container-mod #track-mod {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+
+    width: max-content;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    /* Animação contínua, sem paradas */
+    animation: rolagem-infinita-mod 48s linear infinite;
+
+    /* Não usar a transição do slider anterior */
+    transition: none;
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   MOD — IMAGENS SEM ESPAÇOS LATERAIS
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+.slider-container-mod #track-mod img {
+    display: block;
+
+    /* Cada captura mantém sua proporção original */
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none;
+
+    /* Altura uniforme para todas as imagens */
+    height: 320px;
+
+    /* Impede o JavaScript "antigo" de fixar larguras */
+    flex: 0 0 auto !important;
+
+    /* Remove os espaçamentos entre as imagens*/
+    margin: 0;
+    padding: 0;
+
+    /* Preserva toda a captura, sem distorção */
+    object-fit: contain;
+    background: transparent;
+}
+
+/* Altura reduzida em celulares */
+@media (max-width: 600px) {
+    .slider-container-mod #track-mod img {
+        height: 220px;
+    }
+}
+
+
+/* Desloca exatamente metade da faixa duplicada */
+@keyframes rolagem-infinita-mod {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pausa para observar as capturas */
+.slider-container-mod:hover #track-mod {
+    animation-play-state: paused;
+}
+
+/* Altura adaptada para celulares */
+@media (max-width: 600px) {
+    .slider-container-mod {
+        height: 220px;
+    }
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   AJUSTE DE ESPAÇAMENTO — PORTFÓLIO
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+/* Reduz o espaço interno superior da seção */
+#portfolio {
+    padding-top: 30px;
+}
+
+/* Aproxima o título do carrossel */
+#portfolio > h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   CARROSSEL — COFRINHO PRO (Rolagem contínua e suave)
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+.slider-container-cofrinho {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #101010;
+}
+
+.slider-container-cofrinho #track-cofrinho {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+    width: max-content;
+    height: 100%;
+    animation: rolagem-cofrinho 24s linear infinite;
+}
+
+.slider-container-cofrinho #track-cofrinho img {
+    display: block;
+    width: 320px;
+    height: 220px;
+    flex: 0 0 320px;
+    object-fit: contain;
+    background: #101010;
+}
+
+@keyframes rolagem-cofrinho {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pausa ao posicionar o mouse */
+.slider-container-cofrinho:hover #track-cofrinho {
+    animation-play-state: paused;
+}
+
+/* Adaptação para telas menores */
+@media (max-width: 600px) {
+
+    .slider-container-cofrinho {
+        height: 180px;
+    }
+
+    .slider-container-cofrinho #track-cofrinho img {
+        height: 180px;
+    }
+}
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   CARROSSEL — BAOZI STORE API (Rolagem contínua)
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+.slider-container-baozi {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #101010;
+}
+
+.slider-container-baozi #track-baozi {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+    width: max-content;
+    height: 100%;
+    animation: rolagem-baozi 40s linear infinite;
+}
+
+.slider-container-baozi #track-baozi img {
+    display: block;
+    width: auto;
+    height: 220px;
+    min-width: 0;
+    max-width: none;
+    flex: 0 0 auto;
+    object-fit: contain;
+    background: #101010;
+
+    /* Remove os espaçamentos entre as imagens */
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+@keyframes rolagem-baozi {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pausa ao posicionar o mouse */
+.slider-container-baozi:hover #track-baozi {
+    animation-play-state: paused;
+}
+
+@media (max-width: 600px) {
+
+    .slider-container-baozi {
+        height: 180px;
+    }
+
+    .slider-container-baozi #track-baozi img {
+        height: 180px;
+    }
+}
+
+
+/* ==========================================
+   BOTÃO — DOWNLOAD DO CURRÍCULO
+========================================== */
+
+.btn-curriculo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+    padding: 12px 24px;
+
+    border: 1px solid currentColor;
+    border-radius: 8px;
+
+    color: inherit;
+    background: transparent;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    cursor: pointer;
+    transition: transform 0.2s ease,
+                background-color 0.2s ease;
+}
+
+.btn-curriculo:hover {
+    transform: translateY(-2px);
+    background-color: rgba(128, 128, 128, 0.12);
+}
+
+.btn-curriculo:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   ACESSIBILIDADE — MOVIMENTO REDUZIDO
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    /* Remove o brilho animado */
+    .hero-spotlight::after {
+        animation: none;
+        display: none;
+    }
+
+    /* Interrompe os carrosséis automáticos */
+    .slider-container-mod #track-mod,
+    .slider-container-cofrinho #track-cofrinho,
+    .slider-container-baozi #track-baozi,
+    .slider-container .slider-track {
+        animation: none;
+        transform: translateX(0);
+    }
+
+    /* Exibe as seções sem animação de entrada */
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    /* Remove a animação de digitação */
+    .typewriter {
+        animation: none;
+        width: auto;
+        border-right: none;
+    }
+
+    /* Desativa a rolagem suave */
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    /* Evita a animação de rotação da foto */
+    .profile-inner {
+        transition: none;
+    }
+}
+
+/* TESTE: compactar a primeira seção sem fotografias */
+.profile-section {
+    padding: 65px 20px 45px;
+    min-height: auto;
+    height: auto;
+}
+
+.profile-section .hero-text {
+    margin: 0 auto;
+    max-width: 850px;
+}
+
+
+/* ==================================================
+   CAPA PROFISSIONAL — MAGNO DEV
+   ================================================== */
+
+/* Área principal da apresentação */
+.profile-section {
+    padding: 45px 20px 55px;
+    min-height: auto;
+    height: auto;
+    text-align: center;
+}
+
+/* Cartão central */
+.profile-section .hero-card {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 32px 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+
+    background: #15111e;
+    border: 1px solid rgba(168, 85, 247, 0.12);
+    border-radius: 20px;
+
+    box-sizing: border-box;
+}
+
+/* Ícone de programação */
+.profile-section .hero-icon {
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #2b1a3e;
+    border-radius: 50%;
+
+    color: #c084fc;
+    font-family: monospace;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+/* Nome profissional */
+.profile-section .hero-title {
+    margin: 0;
+
+    color: #e9d5ff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Especialidade */
+.profile-section .hero-subtitle {
+    margin: 0;
+
+    color: #c084fc;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Tecnologias */
+.profile-section .hero-technologies {
+    margin: 0;
+
+    color: #c4b5d5;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Botão do currículo dentro da nova capa */
+.profile-section .hero-card .btn-curriculo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 4px 0 0;
+    padding: 11px 22px;
+
+    background: #6d28d9;
+    border: 1px solid #6d28d9;
+    border-radius: 10px;
+
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Interação do botão */
+.profile-section .hero-card .btn-curriculo:hover {
+    background: #7c3aed;
+    transform: translateY(-2px);
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+
+    .profile-section {
+        padding: 30px 15px 40px;
+    }
+
+    .profile-section .hero-card {
+        padding: 28px 18px;
+        gap: 12px;
+        border-radius: 16px;
+    }
+
+    .profile-section .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .profile-section .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .profile-section .hero-technologies {
+        font-size: 0.85rem;
+        line-height: 1.8;
+    }
+}
+
+/* Ajuste de espaçamento da capa no mobile */
+@media (max-width: 768px) {
+    .profile-section {
+        padding-bottom: 15px;
+    }
+}
+
+
+/* ==================================================
+   OTIMIZAÇÃO — REMOÇÃO DE ANIMAÇÕES DECORATIVAS
+   ================================================== */
+
+/* Remove o efeito de máquina de escrever do cabeçalho */
+.header-title.typewriter {
+    animation: none;
+    width: auto;
+    border-right: none;
+    white-space: normal;
+}
+
+/* Remove o brilho animado do texto de apresentação */
+.hero-spotlight::after {
+    animation: none;
+    content: none;
+}
+
+/* Garante que o texto permaneça visível */
+.hero-spotlight {
+    opacity: 1;
 }
