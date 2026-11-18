@@ -71,10 +71,16 @@ function configurarSliderMod() {
         });
     }
 
-    ajustarLargura();
+    
+    // Aguarda o próximo quadro antes da primeira
+    // leitura da largura do contêiner.
+    requestAnimationFrame(() => {
+        ajustarLargura();
+    });
 
     // Recalcula as larguras se a janela for redimensionada.
     window.addEventListener("resize", ajustarLargura);
+
 }
 
 // Inicializa exclusivamente o carrossel do MOD.

@@ -255,7 +255,7 @@ html {
 
    Organiza os campos verticalmente e centraliza
    o formulário, limitando sua largura máxima.
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -897,13 +897,30 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
     }
 }
 
-/* Respeita a preferência por movimento reduzido */
+
+
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   ACESSIBILIDADE — MOVIMENTO REDUZIDO
+   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
 @media (prefers-reduced-motion: reduce) {
+
+    /* Remove o efeito luminoso animado */
     .hero-spotlight::after {
         animation: none;
         display: none;
     }
+
+    /* Interrompe os três carrosséis automáticos */
+    .slider-container-mod #track-mod,
+    .slider-container-cofrinho #track-cofrinho,
+    .slider-container-baozi #track-baozi {
+        animation: none;
+        transform: translateX(0);
+    }
 }
+
+
 
 
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -924,9 +941,8 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
 
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-   SEÇÃO 4 — TECNOLOGIAS E COMPETÊNCIAS
-   Portfólio Magno Dev v2.0
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+   TECNOLOGIAS E COMPETÊNCIAS
+   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
 /* Texto introdutório */
 .tecnologias-descricao {
@@ -1452,13 +1468,6 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
     }
 }
 
-/* Respeita a preferência por movimento reduzido */
-@media (prefers-reduced-motion: reduce) {
-    .slider-container-mod #track-mod {
-        animation: none;
-    }
-}
-
 
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    AJUSTE DE ESPAÇAMENTO — PORTFÓLIO
@@ -1631,4 +1640,229 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 .btn-curriculo:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 4px;
+}
+
+
+/* =========================================
+   ACESSIBILIDADE — MOVIMENTO REDUZIDO
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    /* Remove o brilho animado */
+    .hero-spotlight::after {
+        animation: none;
+        display: none;
+    }
+
+    /* Interrompe os carrosséis automáticos */
+    .slider-container-mod #track-mod,
+    .slider-container-cofrinho #track-cofrinho,
+    .slider-container-baozi #track-baozi,
+    .slider-container .slider-track {
+        animation: none;
+        transform: translateX(0);
+    }
+
+    /* Exibe as seções sem animação de entrada */
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    /* Remove a animação de digitação */
+    .typewriter {
+        animation: none;
+        width: auto;
+        border-right: none;
+    }
+
+    /* Desativa a rolagem suave */
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    /* Evita a animação de rotação da foto */
+    .profile-inner {
+        transition: none;
+    }
+}
+
+/* TESTE: compactar a primeira seção sem fotografias */
+.profile-section {
+    padding: 65px 20px 45px;
+    min-height: auto;
+    height: auto;
+}
+
+.profile-section .hero-text {
+    margin: 0 auto;
+    max-width: 850px;
+}
+
+
+/* ==================================================
+   CAPA PROFISSIONAL — MAGNO DEV
+   ================================================== */
+
+/* Área principal da apresentação */
+.profile-section {
+    padding: 45px 20px 55px;
+    min-height: auto;
+    height: auto;
+    text-align: center;
+}
+
+/* Cartão central */
+.profile-section .hero-card {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 32px 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+
+    background: #15111e;
+    border: 1px solid rgba(168, 85, 247, 0.12);
+    border-radius: 20px;
+
+    box-sizing: border-box;
+}
+
+/* Ícone de programação */
+.profile-section .hero-icon {
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #2b1a3e;
+    border-radius: 50%;
+
+    color: #c084fc;
+    font-family: monospace;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+/* Nome profissional */
+.profile-section .hero-title {
+    margin: 0;
+
+    color: #e9d5ff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Especialidade */
+.profile-section .hero-subtitle {
+    margin: 0;
+
+    color: #c084fc;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Tecnologias */
+.profile-section .hero-technologies {
+    margin: 0;
+
+    color: #c4b5d5;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Botão do currículo dentro da nova capa */
+.profile-section .hero-card .btn-curriculo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 4px 0 0;
+    padding: 11px 22px;
+
+    background: #6d28d9;
+    border: 1px solid #6d28d9;
+    border-radius: 10px;
+
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Interação do botão */
+.profile-section .hero-card .btn-curriculo:hover {
+    background: #7c3aed;
+    transform: translateY(-2px);
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+
+    .profile-section {
+        padding: 30px 15px 40px;
+    }
+
+    .profile-section .hero-card {
+        padding: 28px 18px;
+        gap: 12px;
+        border-radius: 16px;
+    }
+
+    .profile-section .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .profile-section .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .profile-section .hero-technologies {
+        font-size: 0.85rem;
+        line-height: 1.8;
+    }
+}
+
+/* Ajuste de espaçamento da capa no mobile */
+@media (max-width: 768px) {
+    .profile-section {
+        padding-bottom: 15px;
+    }
+}
+
+
+/* ==================================================
+   OTIMIZAÇÃO — REMOÇÃO DE ANIMAÇÕES DECORATIVAS
+   ================================================== */
+
+/* Remove o efeito de máquina de escrever do cabeçalho */
+.header-title.typewriter {
+    animation: none;
+    width: auto;
+    border-right: none;
+    white-space: normal;
+}
+
+/* Remove o brilho animado do texto de apresentação */
+.hero-spotlight::after {
+    animation: none;
+    content: none;
+}
+
+/* Garante que o texto permaneça visível */
+.hero-spotlight {
+    opacity: 1;
 }

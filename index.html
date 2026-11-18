@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
+
+    <!-- Título exibido no navegador e nos buscadores -->
     <title>Magno Dev | Desenvolvedor Back-end Java</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Responsividade -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- Descrição para mecanismos de busca -->
+    <meta name="description"
+          content="Portfólio de Magno Ferreira, desenvolvedor Back-end Java. Conheça projetos com Java, Spring Boot, APIs REST, PostgreSQL e desenvolvimento de sistemas.">
+
+    <!-- URL oficial do portfólio -->
+    <link rel="canonical"
+          href="https://magnodevbraul.github.io/portfolio/">
+
+    
+    <!-- Open Graph: prévia de compartilhamento -->
+    <meta property="og:type" content="website">
+
+    <meta property="og:locale" content="pt_BR">
+
+    <meta property="og:title"
+        content="Magno Dev | Desenvolvedor Back-end Java">
+
+    <meta property="og:description"
+        content="Conheça o portfólio de Magno Ferreira: projetos com Java, Spring Boot, APIs REST e PostgreSQL.">
+
+    <meta property="og:url"
+        content="https://magnodevbraul.github.io/portfolio/">
+
+    <meta property="og:image"
+        content="https://magnodevbraul.github.io/portfolio/img/magno-dev-og.png">
+
+    <meta property="og:image:alt"
+        content="Magno Dev — Desenvolvedor Back-end Java, com destaque para Java, Spring Boot e PostgreSQL.">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon oficial do Magno Dev -->
+    <link rel="icon" type="image/png" sizes="48x48" href="img/favicon-48.png">
+
+
+    <!-- Folha de estilos -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 
 <body>
 
@@ -27,40 +71,43 @@
 </header>
 
 <main>
+    
+    <!-- CAPA PROFISSIONAL — MAGNO DEV -->
     <section class="profile-section">
-        <div class="profile-card">
-            <div class="profile-inner">
-                <div class="profile-front"><img src="img/capa-site.png"
-                    alt="Foto de perfil do site"></div>
-                <div class="profile-back"><img src="img/capa-site-2.jpg" 
-                    alt="Segunda foto de perfil do site"></div>
+
+        <div class="hero-card">
+
+            <!-- Ícone de desenvolvimento -->
+            <div class="hero-icon" aria-hidden="true">
+                &lt;/&gt;
             </div>
-        </div>
 
-        <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
-               Apresentação profissional e acesso ao currículo 
-            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
-        <div class="hero-text">
+            <!-- Identidade profissional -->
+            <h1 class="hero-title">Magno Dev</h1>
 
-            <p class="hero-spotlight"
-            data-text="Desenvolvedor Back-end Java | Spring Boot | PostgreSQL">
-            Desenvolvedor Back-end Java | Spring Boot | PostgreSQL
+            <h2 class="hero-subtitle">
+                Desenvolvedor Back-end Java
+            </h2>
+
+            <!-- Tecnologias principais -->
+            <p class="hero-technologies">
+                Java 21 · Spring Boot · PostgreSQL · APIs REST
             </p>
 
-            <!-- Botão para baixar o currículo profissional -->
+            <!-- Currículo profissional -->
             <a
                 href="docs/Curriculo_Magno_Ferreira.pdf"
                 download="Curriculo_Magno_Ferreira.pdf"
                 class="btn-curriculo"
-                type="application/pdf"
                 aria-label="Baixar currículo de Magno Ferreira em PDF"
             >
-                <span>Baixar Currículo</span>
+                Baixar Currículo
             </a>
 
         </div>
 
     </section>
+
 
     <section id="sobre" class="section scroll-reveal">
         <h2>Sobre Mim</h2>
@@ -123,8 +170,8 @@
                 <div class="hover-info">
                     <p>
                         <strong>UNINTER</strong><br>
-                        Análise e Desenvolvimento de Sistemas
-                        — em andamento.
+                        Análise e Desenvolvimento de Sistemas<br>
+                        Em andamento - previsão de conclusão: 1º semestre de 2027.
                     </p>
                 </div>
             </div>
@@ -207,21 +254,25 @@
                     <h4>Java Completo</h4>
                     <p>Programação Orientada a Objetos</p>
                     <p>Nélio Alves — Udemy</p>
+                    <p>Em andamento</p>
                 </div>
 
                 <div class="curso-card">
                     <h4>Java e Spring Boot</h4>
                     <p>Área Tech Brasil</p>
+                    <p>Em andamento</p>
                 </div>
 
                 <div class="curso-card">
                     <h4>SQL e Banco de Dados</h4>
                     <p>Leandro Costa — Udemy</p>
+                    <p>Em andamento</p>
                 </div>
 
                 <div class="curso-card">
                     <h4>Angular e TypeScript</h4>
                     <p>Loiane Groner</p>
+                    <p>Em andamento</p>
                 </div>
 
             </div>
@@ -284,7 +335,7 @@
 
     
     <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
-        SEÇÃO 4 — TECNOLOGIAS E COMPETÊNCIAS
+        TECNOLOGIAS E COMPETÊNCIAS
         Conhecimentos aplicados e em desenvolvimento
     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
@@ -404,7 +455,7 @@
 
     
     <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-        SEÇÃO 5 — PROJETOS E CARROSSÉIS
+         PROJETOS E CARROSSÉIS
     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
     <section id="portfolio" class="section scroll-reveal">
@@ -431,44 +482,56 @@
 
                     <!-- 1. Dashboard -->
                     <img
-                        src="img/Mod/dashboard.png"
+                        src="img/Mod/thumbs/dashboard.webp"
                         alt="Dashboard do MOD Gestão Musical"
+                        width="1366" 
+                        height="607"
                         loading="lazy"
                     >
 
                     <!-- 2. Alterações restritas -->
                     <img
-                        src="img/Mod/alteração restrita - PENDENTE.png"
+                        src="img/Mod/thumbs/alteração restrita - PENDENTE.webp"
                         alt="Tela de aprovação de alterações restritas"
-                        loading="lazy"
+                        loading="lazy" 
+                        width="1366" 
+                        height="607"
                     >
 
                     <!-- 3. Documentação da API REST -->
                     <img
-                        src="img/Mod/API REST do MOD  Swagger-OpenAPI.png"
+                        src="img/Mod/thumbs/API REST do MOD  Swagger-OpenAPI.webp"
                         alt="Endpoints do MOD documentados no Swagger"
-                        loading="lazy"
+                        loading="lazy" 
+                        width="1366" 
+                        height="607"
                     >
 
                     <!-- 4. Diagrama de entidades -->
                     <img
-                        src="img/Mod/atualizaçãoDER-V1.5.png"
+                        src="img/Mod/thumbs/atualizaçãoDER-V1.5.webp"
                         alt="Diagrama de entidades e relacionamentos do MOD"
-                        loading="lazy"
+                        loading="lazy" 
+                        width="1366" 
+                        height="757"
                     >
 
                     <!-- 5. Estrutura do banco de dados -->
                     <img
-                        src="img/Mod/estruturas_das_19_tabelas.png"
+                        src="img/Mod/thumbs/estruturas_das_19_tabelas.webp"
                         alt="Estrutura das tabelas do PostgreSQL"
-                        loading="lazy"
+                        loading="lazy" 
+                        width="1366" 
+                        height="717"
                     >
 
                     <!-- 6. Relacionamentos -->
                     <img
-                        src="img/Mod/relacionamentos-01.png"
+                        src="img/Mod/thumbs/relacionamentos-01.webp"
                         alt="Relacionamentos entre tabelas do banco de dados"
-                        loading="lazy"
+                        loading="lazy" 
+                        width="1366" 
+                        height="765"
                     >
 
                 </div>
@@ -763,41 +826,77 @@
 
                         
                         <!-- Capturas originais do Cofrinho Pro -->
-                        <img src="img/cofrinho/login.png"
+                        <img 
+                            src="img/cofrinho/thumbs/login.webp"
                             alt="Tela de login do Cofrinho Pro"
+                            width="1366" 
+                            height="607" 
                             loading="lazy">
 
-                        <img src="img/cofrinho/dashboard.png"
+                        <img 
+                            src="img/cofrinho/thumbs/dashboard.webp"
                             alt="Dashboard financeiro do Cofrinho Pro"
+                            width="1362" 
+                            height="607" 
                             loading="lazy">
 
-                        <img src="img/cofrinho/gerenciamento-moedas.png"
+                        <img 
+                            src="img/cofrinho/thumbs/gerenciamento-moedas.webp"
                             alt="Gerenciamento de moedas do Cofrinho Pro"
+                            width="1339" 
+                            height="600"
                             loading="lazy">
 
-                        <img src="img/cofrinho/historico.png"
+                        <img 
+                            src="img/cofrinho/thumbs/historico.webp"
                             alt="Histórico de operações do Cofrinho Pro"
-                            loading="lazy">
+                            width="546" 
+                            height="609"
+                            loading="lazy" >
 
-                        <img src="img/cofrinho/conversao.png"
+                        <img 
+                            src="img/cofrinho/thumbs/conversao.webp"
                             alt="Conversão de moedas do Cofrinho Pro"
+                            width="1100" 
+                            height="220"
                             loading="lazy">
 
                         <!-- Repetição para rolagem contínua e infinita -->
-                        <img src="img/cofrinho/login.png"
-                            alt="" aria-hidden="true">
+                        <img 
+                            src="img/cofrinho/thumbs/login.webp"
+                            alt="" 
+                            aria-hidden="true"
+                            width="1366" height="607"
+                            loading="lazy">
 
-                        <img src="img/cofrinho/dashboard.png"
-                            alt="" aria-hidden="true">
+                        <img 
+                            src="img/cofrinho/thumbs/dashboard.webp"
+                            alt="" 
+                            aria-hidden="true"
+                            width="1362" 
+                            height="607"
+                            loading="lazy">
 
-                        <img src="img/cofrinho/gerenciamento-moedas.png"
-                            alt="" aria-hidden="true">
+                        <img 
+                            src="img/cofrinho/thumbs/gerenciamento-moedas.webp"
+                            alt="" aria-hidden="true"
+                            width="1339" 
+                            height="600"
+                            loading="lazy">
 
-                        <img src="img/cofrinho/historico.png"
-                            alt="" aria-hidden="true">
+                        <img 
+                            src="img/cofrinho/thumbs/historico.webp"
+                            alt="" aria-hidden="true"
+                            width="546" 
+                            height="609"
+                            loading="lazy">
 
-                        <img src="img/cofrinho/conversao.png"
-                            alt="" aria-hidden="true">
+                        <img 
+                            src="img/cofrinho/thumbs/conversao.webp"
+                            alt="" aria-hidden="true"
+                            width="1100" 
+                            height="220"
+                            loading="lazy">
 
 
                     </div>
@@ -861,39 +960,119 @@
                     <div class="slider-track" id="track-baozi">
 
                         <!-- Capturas originais -->
-                        <img src="img/baozi/árvoreProjeto.png"
-                            alt="Estrutura do projeto Baozi Store API">
+                        <img 
+                            src="img/baozi/thumbs/árvoreProjeto.webp"
+                            alt="Estrutura de arquivos e pastas do projeto Baozi Store API"
+                            width="406" 
+                            height="701"
+                            loading="lazy">
 
-                        <img src="img/baozi/CadastrarClientes.png"
-                            alt="Cadastro de clientes pelo Postman">
+                        <img 
+                            src="img/baozi/thumbs/CadastrarClientes.webp"
+                            alt="Cadastro de clientes pelo Postman" 
+                            width="1352" 
+                            height="680" 
+                            loading="lazy">
 
-                        <img src="img/baozi/cadastroProdutosID-10.png"
-                            alt="Cadastro de produtos pelo Postman">
+                        <img 
+                            src="img/baozi/thumbs/atualizarPedidos.webp"
+                            alt="Cadastro de produtos pelo Postman" 
+                            width="1366" 
+                            height="728" 
+                            loading="lazy">
 
-                        <img src="img/baozi/criandoPedidos_ID-17.png"
-                            alt="Criação de pedidos pelo Postman">
+                        <img 
+                            src="img/baozi/thumbs/criandoPedidos_ID-17.webp"
+                            alt="Criação de pedidos pelo Postman" 
+                            width="1366" 
+                            height="728"
+                            loading="lazy">
 
-                        <img src="img/baozi/listando clientes.png"
-                            alt="Consulta de clientes pelo Postman">
+                        <img 
+                            src="img/baozi/thumbs/listando clientes.webp"
+                            alt="Consulta de clientes pelo Postman" 
+                            width="1366" 
+                            height="728"
+                            loading="lazy">
 
-                        <img src="img/baozi/listando pedidos.png"
-                            alt="Consulta de pedidos pelo Postman">
+                        <img 
+                            src="img/baozi/thumbs/listando pedidos.webp"
+                            alt="Consulta de pedidos pelo Postman" 
+                            width="1366" 
+                            height="728"
+                            loading="lazy">
 
-                        <img src="img/baozi/atualizarPedidos.png"
-                            alt="Atualização de pedidos pelo Postman">
+                        <img 
+                            src="img/baozi/thumbs/atualizarPedidos.webp"
+                            alt="Atualização de pedidos pelo Postman" 
+                            width="1366" 
+                            height="728"
+                            loading="lazy">
 
-                        <img src="img/baozi/progrecaoBanco.png"
-                            alt="Persistência de dados no PostgreSQL">
+                        <img 
+                            src="img/baozi/thumbs/progrecaoBanco.webp"
+                            alt="Persistência de dados no PostgreSQL" 
+                            width="1366" 
+                            height="728"
+                            loading="lazy">
 
                         <!-- Repetição para rolagem infinita -->
-                        <img src="img/baozi/árvoreProjeto.png" alt="" aria-hidden="true">
-                        <img src="img/baozi/CadastrarClientes.png" alt="" aria-hidden="true">
-                        <img src="img/baozi/cadastroProdutosID-10.png" alt="" aria-hidden="true">
-                        <img src="img/baozi/criandoPedidos_ID-17.png" alt="" aria-hidden="true">
-                        <img src="img/baozi/listando clientes.png" alt="" aria-hidden="true">
-                        <img src="img/baozi/listando pedidos.png" alt="" aria-hidden="true">
-                        <img src="img/baozi/atualizarPedidos.png" alt="" aria-hidden="true">
-                        <img src="img/baozi/progrecaoBanco.png" alt="" aria-hidden="true">
+                        <img 
+                            src="img/baozi/thumbs/árvoreProjeto.webp" 
+                            alt="" 
+                            aria-hidden="true" 
+                            width="406" 
+                            height="701"
+                            loading="lazy">
+                        <img 
+                            src="img/baozi/thumbs/CadastrarClientes.webp" 
+                            alt="" 
+                            aria-hidden="true" 
+                            width="1352" 
+                            height="680"
+                            loading="lazy">
+                        <img 
+                            src="img/baozi/thumbs/cadastroProdutosID-10.webp" 
+                            alt="" 
+                            aria-hidden="true" 
+                            width="1366" 
+                            height="728"
+                            loading="lazy">
+                        <img 
+                            src="img/baozi/thumbs/criandoPedidos_ID-17.webp" 
+                            alt="" 
+                            aria-hidden="true" 
+                            width="1366" 
+                            height="728"
+                            loading="lazy">
+                        <img 
+                            src="img/baozi/thumbs/listando clientes.webp" 
+                            alt="" 
+                            aria-hidden="true" 
+                            width="1366" 
+                            height="728"
+                            loading="lazy">
+                        <img 
+                            src="img/baozi/thumbs/listando pedidos.webp" 
+                            alt="" 
+                            aria-hidden="true" 
+                            width="1366" 
+                            height="728"
+                            loading="lazy">
+                        <img 
+                            src="img/baozi/thumbs/atualizarPedidos.webp" 
+                            alt="" 
+                            aria-hidden="true" 
+                            width="1366" 
+                            height="728"
+                            loading="lazy">
+                        <img 
+                            src="img/baozi/thumbs/progrecaoBanco.webp" 
+                            alt="" 
+                            aria-hidden="true" 
+                            width="1366" 
+                            height="728"
+                            loading="lazy">
 
                     </div>
 
@@ -945,18 +1124,69 @@
                 <div class="slider-container">
                     <div class="slider-track" id="track-musica">
 
-                        <img src="img/projeto-musical.jpg" alt="Projeto musical">
-                        <img src="img/projeto-musical-1.jpg" alt="Apresentação musical 1">
-                        <img src="img/projeto-musical-2.jpg" alt="Apresentação musical 2">
-                        <img src="img/projeto-musical-3.jpg" alt="Apresentação musical 3">
-                        <img src="img/projeto-musical-5.jpg" alt="Apresentação musical 5">
+                        <img 
+                            src="img/projeto-musical.jpg" 
+                            alt="Projeto musical" 
+                            width="1080" 
+                            height="429"
+                            loading="lazy">
+
+                        <img 
+                            src="img/projeto-musical-1.jpg" 
+                            alt="Apresentação musical 1" 
+                            width="1080" 
+                            height="753"
+                            loading="lazy">
+                        <img 
+                            src="img/projeto-musical-2.jpg" 
+                            alt="Apresentação musical 2" 
+                            width="1280" 
+                            height="737"
+                            loading="lazy">
+                        <img 
+                            src="img/projeto-musical-3.jpg" 
+                            alt="Apresentação musical 3" 
+                            width="1080" 
+                            height="655"
+                            loading="lazy">
+                        <img 
+                            src="img/projeto-musical-5.jpg" 
+                            alt="Apresentação musical 5" 
+                            width="1280" 
+                            height="576"
+                            loading="lazy">
 
                         <!-- Repetição para rolagem contínua -->
-                        <img src="img/projeto-musical.jpg" alt="">
-                        <img src="img/projeto-musical-1.jpg" alt="">
-                        <img src="img/projeto-musical-2.jpg" alt="">
-                        <img src="img/projeto-musical-3.jpg" alt="">
-                        <img src="img/projeto-musical-5.jpg" alt="">
+                        <img 
+                            src="img/projeto-musical.jpg" 
+                            alt="" 
+                            width="1080" 
+                            height="429"
+                            loading="lazy">
+                        <img 
+                            src="img/projeto-musical-1.jpg" 
+                            alt="" 
+                            width="1080" 
+                            height="753"
+                            loading="lazy">
+                        <img 
+                            src="img/projeto-musical-2.jpg" 
+                            alt="" 
+                            width="1280" 
+                            height="737"
+                            loading="lazy">
+                        <img 
+                            src="img/projeto-musical-3.jpg" 
+                            alt="" 
+                            width="1080" 
+                            height="655"
+                            loading="lazy">
+                        <img 
+                            src="img/projeto-musical-5.jpg" 
+                            alt="" 
+                            width="1280" 
+                            height="576"
+                            loading="lazy">
 
                     </div>
                 </div>
@@ -990,18 +1220,68 @@
                 <div class="slider-container">
                     <div class="slider-track" id="track-web">
 
-                        <img src="img/java-API-1.jpg" alt="API Java">
-                        <img src="img/projeto-java-Dashboard-3.jpg" alt="Dashboard Java">
-                        <img src="img/projeto-java-login-4.jpg" alt="Tela de login">
-                        <img src="img/banco.jpg" alt="Banco de dados">
-                        <img src="img/projeto-java-API-2.jpg" alt="API REST">
+                        <img 
+                            src="img/java-API-1.jpg" 
+                            alt="API Java" 
+                            width="1366" 
+                            height="728"
+                            loading="lazy">
+                        <img 
+                            src="img/projeto-java-Dashboard-3.jpg" 
+                            alt="Dashboard Java" 
+                            width="1313" 
+                            height="607"
+                            loading="lazy">
+                        <img 
+                            src="img/projeto-java-login-4.jpg" 
+                            alt="Tela de login" 
+                            width="1366" 
+                            height="607"
+                            loading="lazy">
+                        <img 
+                            src="img/banco.jpg" 
+                            alt="Banco de dados" 
+                            width="1366" 
+                            height="679"
+                            loading="lazy">
+                        <img 
+                            src="img/projeto-java-API-2.jpg" 
+                            alt="API REST" 
+                            width="1361" 
+                            height="724"
+                            loading="lazy">
 
                         <!-- Repetição para rolagem contínua -->
-                        <img src="img/java-API-1.jpg" alt="">
-                        <img src="img/projeto-java-Dashboard-3.jpg" alt="">
-                        <img src="img/projeto-java-login-4.jpg" alt="">
-                        <img src="img/banco.jpg" alt="">
-                        <img src="img/projeto-java-API-2.jpg" alt="">
+                        <img 
+                            src="img/java-API-1.jpg" 
+                            alt="" 
+                            width="1366" 
+                            height="728"
+                            loading="lazy">
+                        <img 
+                            src="img/projeto-java-Dashboard-3.jpg" 
+                            alt="" 
+                            width="1313" 
+                            height="607"
+                            loading="lazy">
+                        <img 
+                            src="img/projeto-java-login-4.jpg" 
+                            alt="" 
+                            width="1366" 
+                            height="607"
+                            loading="lazy">
+                        <img 
+                            src="img/banco.jpg" 
+                            alt="" 
+                            width="1366" 
+                            height="679"
+                            loading="lazy">
+                        <img 
+                            src="img/projeto-java-API-2.jpg" 
+                            alt="" 
+                            width="1361" 
+                            height="724"
+                            loading="lazy">
 
                     </div>
                 </div>
@@ -1033,11 +1313,39 @@
     <section id="contato" class="section scroll-reveal">
         <h2>Contato</h2>
         <div class="contato-direto">
-            <p><strong>E-mail:</strong> <a href="mailto:magnow.dev@gmail.com">magnow.dev@gmail.com</a></p>
-            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5561993191621" target="_blank">(61) 99319-1621</a></p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/MagnoDevbraul" target="_blank">MagnoDevbraul</a></p>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/magnow-dev/" target="_blank">Magno Dev</a></p>
+            <p>
+                <strong>E-mail:</strong>
+                <a href="mailto:magnodevbraul@gmail.com">
+                    magnodevbraul@gmail.com
+                </a>
+            </p>
+
+            <p>
+                <strong>WhatsApp:</strong>
+                <a href="https://wa.me/5561993191621"
+                   target="_blank">
+                   (61) 99319-1621
+                </a>
+            </p>
+            <p>
+                <strong>GitHub:</strong> 
+                <a href="https://github.com/magnoDevbraul" 
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    magnoDevbraul
+                </a>
+            </p>
+
+            <p>
+                <strong>LinkedIn:</strong> 
+                <a href="https://www.linkedin.com/in/magnodevbraul/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    magno Dev
+                </a>
+            </p>
         </div>
+
         <form id="form-contato" action="https://formspree.io/f/mkorkqaq" method="POST" class="contact-form">
             <div class="input-group">
                 <input type="text" name="name" id="campo-nome" placeholder="Nome" required>
@@ -1053,7 +1361,7 @@
     <span class="fechar" onclick="fecharGaleria()">&times;</span>
     <button class="seta anterior" onclick="mudarFoto(-1)">&#10094;</button>
     <div class="conteudo-galeria">
-        <img id="foto-exibida" src="">
+        <img id="foto-exibida" src="" alt="Imagem ampliada do projeto selecionado">
     </div>
     <button class="seta proximo" onclick="mudarFoto(1)">&#10095;</button>
 </div>
@@ -1074,8 +1382,8 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
         Desenvolvedor Back-end Java | Violoncelista
     </p>
 
-    <a class="footer-email" href="mailto:magnow.dev@gmail.com">
-        magnow.dev@gmail.com
+    <a class="footer-email" href="mailto:magnodevbraul@gmail.com">
+        magnodevbraul@gmail.com
     </a>
 
     <p class="footer-copyright">
@@ -1086,6 +1394,6 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 </footer>
 
 
-<script src="js/script.js"></script>
+<script src="js/script.js" defer></script>
 </body>
 </html>
